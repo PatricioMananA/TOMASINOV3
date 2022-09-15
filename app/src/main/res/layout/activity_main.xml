@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#202732"
+    android:background="#205732"
     >
 
     <TextView
@@ -158,6 +158,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Button"
-        android:onClick="SiguienteACT"/>
+        android:onClick="SiguienteACT"
+        android:background="@drawable/btn_redon_reg"/>
 
 </android.support.constraint.ConstraintLayout>

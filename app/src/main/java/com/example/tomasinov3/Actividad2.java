@@ -29,22 +29,12 @@ public class Actividad2 extends AppCompatActivity {
 
     public List<PersonaModelo> obtenerPersonas(){
         List <PersonaModelo> persona = new ArrayList<>();
-        persona.add(new PersonaModelo("pato","gonzalez",R.drawable.nombre));
-        persona.add(new PersonaModelo("andres","perez",R.drawable.facebook));
-        persona.add(new PersonaModelo("nicol","soto",R.drawable.facebook));
-        persona.add(new PersonaModelo("sandra","lolo",R.drawable.facebook));
-        persona.add(new PersonaModelo("pato","gonzalez",R.drawable.nombre));
-        persona.add(new PersonaModelo("andres","perez",R.drawable.facebook));
-        persona.add(new PersonaModelo("nicol","soto",R.drawable.facebook));
-        persona.add(new PersonaModelo("sandra","lolo",R.drawable.facebook));
-        persona.add(new PersonaModelo("pato","gonzalez",R.drawable.nombre));
-        persona.add(new PersonaModelo("andres","perez",R.drawable.facebook));
-        persona.add(new PersonaModelo("nicol","soto",R.drawable.facebook));
-        persona.add(new PersonaModelo("sandra","lolo",R.drawable.facebook));
-        persona.add(new PersonaModelo("pato","gonzalez",R.drawable.nombre));
-        persona.add(new PersonaModelo("andres","perez",R.drawable.facebook));
-        persona.add(new PersonaModelo("nicol","soto",R.drawable.facebook));
-        persona.add(new PersonaModelo("sandra","lolo",R.drawable.facebook));
+        persona.add(new PersonaModelo("patricio","gonzalez",R.drawable.hombre1));
+        persona.add(new PersonaModelo("andres","perez",R.drawable.hombre2));
+        persona.add(new PersonaModelo("juan","soto",R.drawable.hombre3));
+        persona.add(new PersonaModelo("sandra","lolo",R.drawable.mujer1));
+        persona.add(new PersonaModelo("nicol","soto",R.drawable.mujer2));
+        persona.add(new PersonaModelo("camila","ruiz",R.drawable.mujer3));
         return persona;
     }
 }
