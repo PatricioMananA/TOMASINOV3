@@ -18,23 +18,22 @@ public class Actividad3 extends AppCompatActivity implements AdapterView.OnItemS
     String [] country = {"seleccione sede","Santiago centro",
             "San Joaquin",
             "Arica",
-            "iquique",
+            "Iquique",
             "Antofagasta",
             "Copiapo",
-            "La Serena",
+            "la serana",
             "Ovalle",
-            "Viña del Mar",
+            "Viña del mar",
             "Rancagua",
             "Curico",
             "Talca",
             "Chillan",
             "concepcion",
-            "Los angeles",
-            "Temuco",
+            "Los angeles", "Temuco",
             "Valdivia",
             "Osorno",
             "Puerto Montt",
-            "Punta Arenas"};
+            "Punta Arenas",};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
