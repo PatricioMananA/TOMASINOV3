@@ -1,18 +1,30 @@
 package com.example.tomasinov3;
 
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.Spinner;
+
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Actividad3 extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     ConstraintLayout Layout ;
+    ImageView iv1;
 
 
     String [] country = {"seleccione sede","Santiago centro",
@@ -43,6 +55,7 @@ public class Actividad3 extends AppCompatActivity implements AdapterView.OnItemS
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
         Layout = findViewById(R.id.Layout);
+        iv1 = findViewById(R.id.iv1);
 
 
         ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item,country);
@@ -70,6 +83,52 @@ public class Actividad3 extends AppCompatActivity implements AdapterView.OnItemS
         })
                 .setActionTextColor(getResources().getColor(R.color.purple_200)).show();
 
+    }
+
+
+    final int CAPTURA_IMAGEN=1;
+
+    public void tomarFoto (View v){
+
+        Intent i =  new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(i,CAPTURA_IMAGEN);
+
+
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode==CAPTURA_IMAGEN && resultCode==RESULT_OK)
+        {
+            Bundle extras = data.getExtras();
+            Bitmap bitmap1 = (Bitmap)extras.get("data");
+            iv1.setImageBitmap(bitmap1);
+
+            try {
+                FileOutputStream fos = openFileOutput(crearNombreArchivoJPG(), Context.MODE_PRIVATE);
+                bitmap1.compress(Bitmap.CompressFormat.JPEG,100,fos);
+                fos.close();
+
+            }catch (Exception e){
+
+            }
+
+        }
+    }
+
+    private String crearNombreArchivoJPG() {
+        String fecha= new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        return fecha+".jpg";
+    }
+
+
+    public void VerTodasLasFotos(View v){
+
+        Intent intentfotos = new Intent(this,MostrarFotos.class);
+        startActivity(intentfotos);
     }
 
 }

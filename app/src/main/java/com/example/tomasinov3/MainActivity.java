@@ -1,7 +1,7 @@
 package com.example.tomasinov3;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -44,6 +44,30 @@ public class MainActivity extends AppCompatActivity {
             String mensaje = "credenciales no guardadas";
             Toast.makeText(this,mensaje,Toast.LENGTH_LONG).show();
         }
+
+    }
+
+    public void IrContacto (View form){
+        Intent inte3 = new Intent(this,Contacto.class);
+        startActivity(inte3);
+
+    }
+
+    public void IrMapas (View form){
+        Intent inte4 = new Intent(this,MapsActivity.class);
+        startActivity(inte4);
+
+    }
+
+    public void IrActividades (View actividades){
+        Intent inte5 = new Intent(this,ActividadHilos.class);
+        startActivity(inte5);
+
+    }
+
+    public void IrSensores (View Sensor){
+        Intent inte6 = new Intent(this,Sensores.class);
+        startActivity(inte6);
 
     }
 
